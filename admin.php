@@ -23,10 +23,10 @@ if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
    $delete_query = mysqli_query($conn, "DELETE FROM `products` WHERE id = $delete_id ") or die('query failed');
    if($delete_query){
-      header('location:admin.php');
+      header('location:index.php');
       $message[] = 'Producto eliminado';
    }else{
-      header('location:admin.php');
+      header('location:index.php');
       $message[] = 'Error al eliminar producto';
    };
 };
@@ -44,10 +44,10 @@ if(isset($_POST['update_product'])){
    if($update_query){
       move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
       $message[] = 'Producto actualizado!';
-      header('location:admin.php');
+      header('location:index.php');
    }else{
       $message[] = 'Error al actualizar';
-      header('location:admin.php');
+      header('location:index.php');
    }
 
 }
@@ -121,8 +121,8 @@ if(isset($message)){
             <td><?php echo $row['name']; ?></td>
             <td>₡<?php echo $row['price']; ?>/-</td>
             <td>
-               <a href="admin.php?delete=<?php echo $row['id']; ?>" class="delete-btn" onclick="return confirm('¿Estás seguro de que quieres eliminarlo?');"> <i class="fas fa-trash"></i> Eliminar </a>
-               <a href="admin.php?edit=<?php echo $row['id']; ?>" class="update-btn"> <i class="fas fa-edit"></i> Actualizar </a>
+               <a href="index.php?delete=<?php echo $row['id']; ?>" class="delete-btn" onclick="return confirm('¿Estás seguro de que quieres eliminarlo?');"> <i class="fas fa-trash"></i> Eliminar </a>
+               <a href="index.php?edit=<?php echo $row['id']; ?>" class="update-btn"> <i class="fas fa-edit"></i> Actualizar </a>
             </td>
          </tr>
 

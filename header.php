@@ -6,7 +6,7 @@
       <a href="#" class="logo">QuickBites Express</a>
 
       <nav class="navbar" >
-         <a href="admin.php">Agregar</a>
+         <a href="index.php">Agregar</a>
          <a href="products.php">Ver Productos</a>
       </nav>
 
